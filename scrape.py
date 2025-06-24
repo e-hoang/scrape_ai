@@ -12,7 +12,9 @@ client = OpenAI(api_key=api_key)
 
 app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
+
 def index():
+    result = None
     url = 'https://finance.yahoo.com/markets/'
     headers = {'User-Agent' : 'Mozilla/5.0'}
     page = requests.get(url, headers=headers) 
