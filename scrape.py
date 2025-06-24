@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 def index():
     result = None
-    url = 'https://finance.yahoo.com/markets/'
+    url = request.form['website']
     headers = {'User-Agent' : 'Mozilla/5.0'}
     page = requests.get(url, headers=headers) 
     soup = BeautifulSoup(page.text, 'html.parser')
