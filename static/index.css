@@ -18,3 +18,8 @@ html{
     flex-direction: column;
     align-items: center;
 }
+
+ul{
+    text-decoration: none;
+    padding: 5%;
+}
