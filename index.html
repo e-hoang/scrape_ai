@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scrape AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" >
+</head>
+<body>
+    <div class="header">
+        <h1>Enter a website to scrape and analyze: </h1>
+        <form method="POST">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website">
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <div class="syms">
+        {% if tickers %}
+        <ul>
+            {% for symbol, change in tickers.items() %}
+                <li>{{ symbol }}: {{ change }}</li>   
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="analysis">
+        {% if result %}
+        <p class="result">
+            {{ result }}
+        </p>
+        {% endif %}
+    </div>
+</body>
+</html>
