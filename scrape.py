@@ -12,7 +12,7 @@ if not api_key:
 #Initialize the OpenAI client and begin a conversation in the chat log
 client = OpenAI(api_key=api_key)
 chat_log = [
-    {'role': 'assistant', 'content': 'You are going to analyze stocks'}
+    {'role': 'assistant', 'content': 'You are a financial advisor with 35+ years in stock market experience'}
 ]
 
 #Initialize the Flask application
@@ -26,7 +26,8 @@ def index():
     #This takes the user url input, begins an AI conversation, and scrapes the data
     if request.method == 'POST':
         url = request.form['website']
-        chat_log.append({'role': 'user', 'content': url})
+        tickers = scrape(url)
+        chat_log.append({'role': 'user', 'content': f'Analyze these stock trends: {tickers}'})
         completion = client.chat.completions.create(
             model='gpt-4o-mini',
             messages=chat_log
@@ -34,7 +35,6 @@ def index():
         response = completion.choices[0].message.content.strip()
         chat_log.append({'role': 'assistant', 'content': response})
         result = response
-        tickers = scrape(url)
 
     return render_template('index.html', result=result, chat_log=chat_log, tickers=tickers)
 

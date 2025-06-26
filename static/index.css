@@ -32,3 +32,15 @@ ul{
     justify-content: center;
     align-items: center;
 }
+
+.analysis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 5%;
+}
+
+.result{
+    padding: 15px;
+}
