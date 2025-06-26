@@ -14,12 +14,21 @@ html{
 .header{
     display: flex;
     justify-content: center;
-    margin: 5%;
+    margin: 3%;
+    margin-bottom: 1%;
     flex-direction: column;
     align-items: center;
 }
 
 ul{
-    text-decoration: none;
+    list-style: none;
     padding: 5%;
+    font-size: larger;
+    padding-top: 1%;
+}
+
+.syms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

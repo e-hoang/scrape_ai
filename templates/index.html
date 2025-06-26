@@ -15,14 +15,14 @@
             <button type="submit">Analyze</button>
         </form>
     </div>
-
-    {% if tickers %}
-    <ul>
-        {% for symbol in tickers %}
-            <li>{{ symbol }}</li>   
-        {% endfor %}
-    </ul>
-    {% endif %}
-
+    <div class="syms">
+        {% if tickers %}
+        <ul>
+            {% for symbol in tickers %}
+                <li>{{ symbol }}</li>   
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 </body>
 </html>

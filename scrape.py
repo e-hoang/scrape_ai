@@ -43,18 +43,22 @@ def scrape(url):
     page = requests.get(url, headers=headers) 
     soup = BeautifulSoup(page.text, 'html.parser') 
 
-    #Find the ticker symbols in the class symbol yf-1jsynna
-    ticker_spans = soup.findAll('span', class_='symbol yf-1jsynna')
-    tickers = []
+    #Find the ticker symbols in the class symbol yf-hwu3c7
+    ticker_spans = soup.findAll('span', class_='symbol yf-hwu3c7')
+    tickers = {}
+
+    #Find the 52 week change percentage for each ticker
+    week_change = soup.find_all('fin-streamer', attrs={'data-field': 'fiftyTwoWeekChangePercent'})
     
     #Scrape the ticker symbols
-    for ticker in ticker_spans:
+    for ticker, change in zip(ticker_spans, week_change):
         symbol = ticker.get_text(strip=True)
+        percentage = change.get_text(strip=True)
         if symbol:
-            tickers.append(symbol)
+            tickers[symbol] = percentage
 
     #This returns the list of found ticker symbols
     return tickers
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
