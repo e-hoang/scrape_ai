@@ -20,6 +20,13 @@ html{
     align-items: center;
 }
 
+button{
+    background-color: rbg(255, 255, 255, 0.1);
+    font-weight: 500;
+    border-radius: 5px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
 ul{
     list-style: none;
     padding: 5%;
@@ -37,10 +44,29 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    padding: 5%;
+    padding: 1rem;
 }
 
 .result{
-    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #03254c;
+    width: 90%;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-line;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
+
+/* .result{
+
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    white-space: pre-line;
+} */

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Scrape AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" >
+    <link rel="stylesheet" href="https://use.typekit.net/kgu7tqo.css">
 </head>
 <body>
     <div class="header">
@@ -16,7 +17,7 @@
         </form>
     </div>
 
-    <div class="syms">
+    <!-- <div class="syms">
         {% if tickers %}
         <ul>
             {% for symbol, change in tickers.items() %}
@@ -24,7 +25,7 @@
             {% endfor %}
         </ul>
         {% endif %}
-    </div>
+    </div> -->
 
     <div class="analysis">
         {% if result %}
