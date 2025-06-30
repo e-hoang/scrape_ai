@@ -12,7 +12,7 @@ if not api_key:
 #Initialize the OpenAI client and begin a conversation in the chat log
 client = OpenAI(api_key=api_key)
 chat_log = [
-    {'role': 'assistant', 'content': 'You are a financial advisor with 35+ years in stock market experience'}
+    {'role': 'assistant', 'content': 'You are a financial advisor with 35+ years in stock market experience. Given the 52 week performance, what do you observe?'}
 ]
 
 #Initialize the Flask application
