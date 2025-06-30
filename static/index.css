@@ -21,7 +21,7 @@ html{
 }
 
 button{
-    background-color: rbg(255, 255, 255, 0.1);
+    background-color: rbga(255, 255, 255, 0.1);
     font-weight: 500;
     border-radius: 5px;
     font-family: 'Bebas Neue', sans-serif;
